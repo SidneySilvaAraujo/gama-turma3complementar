@@ -1,43 +1,38 @@
 package exercicio01;
 
 public class Funcionario {
-	private String nome;
-	private double horasTrabalhadas;
-	private double salarioHora;
+    private String nome;
+    private int horasTrabalhadas;
+    private double valorPorHora;
 
-	public String getNome() {
-		return nome;
-	}
+    public Funcionario(String nome, int horasTrabalhadas, double valorPorHora) {
+        this.nome = nome;
+        setHorasTrabalhadas(horasTrabalhadas);
+        setValorPorHora(valorPorHora);
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public int getHorasTrabalhadas() {
+        return horasTrabalhadas;
+    }
 
-	public double getHorasTrabalhadas() {
-		return horasTrabalhadas;
-	}
+    public void setHorasTrabalhadas(int horasTrabalhadas) {
+        if (horasTrabalhadas > 0) {
+            this.horasTrabalhadas = horasTrabalhadas;
+        }
+    }
 
-	public void setHorasTrabalhadas(double horasTrabalhadas) {
-		this.horasTrabalhadas = horasTrabalhadas;
-	}
+    public void setValorPorHora(double valorPorHora) {
+        if (valorPorHora > 0) {
+            this.valorPorHora = valorPorHora;
+        }
+    }
 
-	public double getSalarioHora() {
-		return salarioHora;
-	}
+    public double calcularSalario() {
+        return horasTrabalhadas * valorPorHora;
+    }
 
-	public void setSalarioHora(double salarioHora) {
-		this.salarioHora = salarioHora;
-	}
+    public String exibirDados() {
+        return nome + ", " + horasTrabalhadas + ", " + valorPorHora;
+    }
 
-	public double cauculo(double horasTrabalhadas, double salarioHora) {
-		double total = 0;
-		total = this.horasTrabalhadas * this.salarioHora;
-		return total;
-	}
-
-	public void imprime() {
-		System.out.println("Nome" + nome);
-		System.out.println("Salário por horas trabalhadas: " + salarioHora);
-		System.out.println("Horas trabalhadas: " + horasTrabalhadas);
-	}
 }

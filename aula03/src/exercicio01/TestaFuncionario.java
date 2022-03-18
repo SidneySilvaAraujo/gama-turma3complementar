@@ -1,13 +1,14 @@
 package exercicio01;
 
 public class TestaFuncionario {
-	public static void main(String[] args) {
-		Funcionario f1 = new Funcionario();
-		f1.setNome("João");
-		f1.setHorasTrabalhadas(6);
-		f1.setSalarioHora(200);
-		f1.imprime();
-			System.out.println(f1.cauculo(f1.getSalarioHora(), f1.getHorasTrabalhadas()));
-		
-	}
+    public static void main(String[] args) {
+        Funcionario f = new Funcionario("Joaquim", 30, 20);
+        Senior s = new Senior("Ana", 25, 20, 10);
+
+        System.out.println(f.exibirDados());
+        System.out.println("Salario = " + f.calcularSalario());
+        System.out.println(s.exibirDados());
+        System.out.println("Salario = " + s.calcularSalario());
+
+    }
 }
